@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tippy dog Menu</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #b9da49 ;
+    padding: 50px;
+}
+
+h1 {
+    color: #8b0000;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #ffcc00;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ffcc00;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+<body>
+    <h1>Tippy's Dog menu</h1>
+
+    <div class="dropdown">
+        <button class="dropbtn">Choose Your Sandwich</button>
+        <div class="dropdown-content">
+            <a href="#">Husky Stew</a>
+            <a href="#">Hot dawg</a>
+            <a href="#">Dog tail soup</a>
+        </div>
+    </div>
+
+</body>
+</html>
