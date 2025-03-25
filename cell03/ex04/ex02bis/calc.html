@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple jQuery Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container-fluid {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <h1>Calculator</h1>
+            <form>
+                <input type="text" id="num1" required />
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="text" id="num2" required />
+                <input type="submit" value="Try me!" />
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                event.preventDefault();
+
+                let num1 = $("#num1").val();
+                let num2 = $("#num2").val();
+                let operator = $("#operator").val();
+                let ans = 0;
+
+                // Check if input contains non-integer values (decimals or non-numbers)
+                if (!/^\d+$/.test(num1) || !/^\d+$/.test(num2)) {
+                    alert("Error");
+                    return;
+                }
+
+                num1 = parseInt(num1);
+                num2 = parseInt(num2);
+
+                if (operator === "+") {
+                    ans = num1 + num2;
+                } else if (operator === "-") {
+                    ans = num1 - num2;
+                } else if (operator === "*") {
+                    ans = num1 * num2;
+                } else if (operator === "/") {
+                    if (num2 === 0) {
+                        alert("Error");
+                        return;
+                    }
+                    ans = Math.floor(num1 / num2); // Integer division
+                } else {
+                    alert("Error");
+                    return;
+                }
+
+                alert(ans);
+            });
+        });
+    </script>
+</body>
+</html>
+
