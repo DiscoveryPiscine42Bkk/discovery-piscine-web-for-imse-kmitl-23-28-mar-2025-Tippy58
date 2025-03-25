@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <style>
+      .container-fluid {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        text-align: center;
+      }
+    </style>
+    <script>
+      setInterval(function () {
+        alert("Please, use me...");
+      }, 30000);
+
+      function calculate(event) {
+        event.preventDefault();
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const operator = document.getElementById("operator").value;
+        let ans = 0;
+
+        if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0) {
+          alert("Error :(");
+          return;
+        }
+
+        switch (operator) {
+          case "+": ans = num1 + num2; break;
+          case "-": ans = num1 - num2; break;
+          case "*": ans = num1 * num2; break;
+          case "/": ans = num1 / num2; break;
+          case "%": ans = num1 % num2; break;
+          default: alert("Invalid operator"); return;
+        }
+
+        if (isNaN(ans)) {
+          alert("It’s over 9000!");
+        } else {
+          alert(ans);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <h1>Calculator</h1>
+        <form onsubmit="calculate(event)">
+          <input type="text" id="num1" required />
+          <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+          </select>
+          <input type="text" id="num2" required />
+          <input type="submit" value="Try me!" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
