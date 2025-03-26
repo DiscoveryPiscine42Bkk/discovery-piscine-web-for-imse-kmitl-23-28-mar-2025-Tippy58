@@ -52,7 +52,8 @@
       const notwo = event.target.notwo.value;
       const operator = event.target.operator.value;
 
-      if (isNaN(noone) || isNaN(notwo)) {
+      // ตรวจสอบว่า noone และ notwo เป็นตัวเลขหรือไม่
+      if (isNaN(noone) || isNaN(notwo) || noone === '' || notwo === '') {
         console.log("Error :(");
         alert("Please enter valid numbers!");
         return;
@@ -67,6 +68,7 @@
         alert("Negative numbers are not allowed.");
         return;
       }
+
 
       if (operator == "+") {
         answer = num1 + num2;
