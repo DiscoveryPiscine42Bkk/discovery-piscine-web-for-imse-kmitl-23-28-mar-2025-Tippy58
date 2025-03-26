@@ -64,26 +64,8 @@
 
       if (num1 < 0 || num2 < 0) {
         console.log("Error :(");
-        alert("Negative numbers are not allowed.");
+        alert("Error");
         return;
-      }
-
-
-      if (operator == "+") {
-        answer = num1 + num2;
-      } else if (operator == "-") {
-        answer = num1 - num2;
-      } else if (operator == "*") {
-        answer = num1 * num2;
-      } else if (operator == "/") {
-        if (num2 === 0) {
-          console.log("Error");
-          alert("Cannot divide by zero!");
-          return;
-        }
-        answer = num1 / num2;
-      } else if (operator == "%") {
-        answer = num1 % num2;
       }
 
       if (answer === Infinity) {
