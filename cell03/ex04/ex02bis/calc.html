@@ -10,18 +10,19 @@
     ></script>
     <style>
       .container-fluid {
-  width: 100%;
-  display: flex;
-}
-.container {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}</style>
+        width: 100%;
+        display: flex;
+      }
+      .container {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
     <script>
       setInterval(function () {
-  alert("Please, use me...");
-}, 30000);
+        alert("Please, use me...");
+      }, 30000);
     </script>
   </head>
   <body>
@@ -46,31 +47,45 @@
   <script>
     $("#target").submit((event) => {
       event.preventDefault();
-      const noone = parseFloat(event.target.noone.value);
-      const notwo = parseFloat(event.target.notwo.value);
+      
+      const noone = event.target.noone.value;
+      const notwo = event.target.notwo.value;
       const operator = event.target.operator.value;
+
+      if (isNaN(noone) || isNaN(notwo)) {
+        console.log("Error :(");
+        alert("Please enter valid numbers!");
+        return;
+      }
+
+      const num1 = parseFloat(noone);
+      const num2 = parseFloat(notwo);
       let answer = 0;
-      if (Math.floor(noone) != noone || isNaN(notwo)) {
+
+      if (num1 < 0 || num2 < 0) {
         console.log("Error :(");
-        alert("Error :(");
+        alert("Negative numbers are not allowed.");
         return;
       }
-      if (noone < 0 || notwo < 0) {
-        console.log("Error :(");
-        alert("Error :(");
-        return;
-      } else if (operator == "+") {
-        answer = noone + notwo;
+
+      if (operator == "+") {
+        answer = num1 + num2;
       } else if (operator == "-") {
-        answer = noone - notwo;
+        answer = num1 - num2;
       } else if (operator == "*") {
-        answer = noone * notwo;
+        answer = num1 * num2;
       } else if (operator == "/") {
-        answer = noone / notwo;
+        if (num2 === 0) {
+          console.log("Error : Division by zero!");
+          alert("Cannot divide by zero!");
+          return;
+        }
+        answer = num1 / num2;
       } else if (operator == "%") {
-        answer = noone % notwo;
+        answer = num1 % num2;
       }
-      if (answer == Infinity) {
+
+      if (answer === Infinity) {
         console.log("It’s over 9000!");
         alert("It’s over 9000!");
       } else {
