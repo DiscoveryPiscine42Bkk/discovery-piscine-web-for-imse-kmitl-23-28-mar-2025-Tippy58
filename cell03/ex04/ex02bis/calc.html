@@ -54,7 +54,7 @@
 
       if (isNaN(noone) || isNaN(notwo) || noone === '' || notwo === '') {
         console.log("Error :(");
-        alert("Error");
+        alert("Please enter valid numbers!");
         return;
       }
 
@@ -66,6 +66,23 @@
         console.log("Error :(");
         alert("Error");
         return;
+      }
+
+      if (operator == "+") {
+        answer = num1 + num2;
+      } else if (operator == "-") {
+        answer = num1 - num2;
+      } else if (operator == "*") {
+        answer = num1 * num2;
+      } else if (operator == "/") {
+        if (num2 === 0) {
+          console.log("Error");
+          alert("Error");
+          return;
+        }
+        answer = num1 / num2;
+      } else if (operator == "%") {
+        answer = num1 % num2;
       }
 
       if (answer === Infinity) {
