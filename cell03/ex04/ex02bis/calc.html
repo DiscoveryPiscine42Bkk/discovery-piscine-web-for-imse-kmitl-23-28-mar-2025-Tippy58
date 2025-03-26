@@ -47,13 +47,13 @@
   <script>
     $("#target").submit((event) => {
       event.preventDefault();
-      
+
       const noone = event.target.noone.value;
       const notwo = event.target.notwo.value;
       const operator = event.target.operator.value;
 
       if (isNaN(noone) || isNaN(notwo) || noone === '' || notwo === '') {
-        console.log("Error :(");
+        console.log("Error");
         alert("Error");
         return;
       }
@@ -63,7 +63,7 @@
       let answer = 0;
 
       if (num1 < 0 || num2 < 0) {
-        console.log("Error :(");
+        console.log("Error");
         alert("Error");
         return;
       }
@@ -76,16 +76,21 @@
         answer = num1 * num2;
       } else if (operator == "/") {
         if (num2 === 0) {
-          console.log("Error :(")");
-          alert("Error");
+          console.log("It’s over 9000!");
+          alert("It’s over 9000!");
           return;
         }
         answer = num1 / num2;
       } else if (operator == "%") {
+        if (num2 === 0) {
+          console.log("It’s over 9000!");
+          alert("It’s over 9000!");
+          return;
+        }
         answer = num1 % num2;
       }
 
-      if (answer === Infinity) {
+      if (answer === Infinity || isNaN(answer)) {
         console.log("It’s over 9000!");
         alert("It’s over 9000!");
       } else {
@@ -96,6 +101,3 @@
   </script>
 </html>
 
-    });
-  </script>
-</html>
