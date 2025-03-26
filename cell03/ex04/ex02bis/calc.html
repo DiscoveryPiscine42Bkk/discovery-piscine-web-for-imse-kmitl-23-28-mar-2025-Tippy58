@@ -54,7 +54,7 @@
 
       if (isNaN(noone) || isNaN(notwo) || noone === '' || notwo === '') {
         console.log("Error :(");
-        alert("Please enter valid numbers!");
+        alert("Error");
         return;
       }
 
@@ -76,7 +76,7 @@
         answer = num1 * num2;
       } else if (operator == "/") {
         if (num2 === 0) {
-          console.log("Error");
+          console.log("Error :(")");
           alert("Error");
           return;
         }
@@ -92,6 +92,10 @@
         console.log(answer);
         alert(answer);
       }
+    });
+  </script>
+</html>
+
     });
   </script>
 </html>
