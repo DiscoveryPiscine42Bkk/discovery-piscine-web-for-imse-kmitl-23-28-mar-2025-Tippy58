@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutthaphob Chaichulee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #004080;
             color: #ffffff;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+            text-align: center;
         }
         .navbar {
             position: fixed;
@@ -20,22 +19,13 @@
             top: 0;
             z-index: 1000;
             background: rgba(0, 64, 128, 0.9);
-            transition: background 0.3s;
-            padding: 15px 20px;
-            box-sizing: border-box;
         }
-        .navbar-shrink {
-            background: rgba(0, 64, 128, 1);
+        .nav-link {
+            color: white !important;
+            transition: 0.3s;
         }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            margin-right: 20px;
-            transition: color 0.3s;
-        }
-        .navbar a:hover {
-            color: #cce5ff;
+        .nav-link:hover {
+            color: #cce5ff !important;
         }
         .section {
             padding: 100px 20px;
@@ -97,25 +87,24 @@
             color: #002b5e;
             font-weight: normal;
         }
-        .btn {
-            padding: 10px 20px;
-            background-color: #cce5ff;
-            color: #002b5e;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .btn:hover {
-            background-color: #99c2ff;
-        }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Back to Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-user"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills"><i class="fas fa-star"></i> Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <section id="about" class="section bg-dark-blue">
         <div>
@@ -126,78 +115,59 @@
     </section>
 
     <section id="skills" class="section">
-        <div>
-            <h2>My Skills</h2>
-            <div class="skills-container">
-                <div class="skill-box">
-                    <i class="fas fa-futbol fa-2x"></i><br>
-                    <strong>Football</strong><br>
-                    <small>Skilled in dribbling, passing, and team play</small>
-                </div>
-                <div class="skill-box">
-                    <i class="fas fa-basketball-ball fa-2x"></i><br>
-                    <strong>Basketball</strong><br>
-                    <small>Fast-paced game tactics and precision shooting</small>
-                </div>
-                <div class="skill-box">
-                    <i class="fas fa-dumbbell fa-2x"></i><br>
-                    <strong>Gym Coach</strong><br>
-                    <small>Strength training and fitness guidance</small>
-                </div>
-                <div class="skill-box">
-                    <i class="fas fa-music fa-2x"></i><br>
-                    <strong>Music Recording</strong><br>
-                    <small>Producing and capturing high-quality sound</small>
-                </div>
-                <div class="skill-box">
-                    <i class="fas fa-guitar fa-2x"></i><br>
-                    <strong>Guitar Recording</strong><br>
-                    <small>Recording professional guitar tracks</small>
-                </div>
-                <div class="skill-box">
-                    <i class="fas fa-tools fa-2x"></i><br>
-                    <strong>Concert Technician</strong><br>
-                    <small>Setting up and managing live performances</small>
-                </div>
+    <div>
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box">
+                <i class="fas fa-futbol fa-2x"></i><br>
+                <strong>Football</strong><br>
+                <small>Skilled in dribbling, passing, and team play</small>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-basketball-ball fa-2x"></i><br>
+                <strong>Basketball</strong><br>
+                <small>Fast-paced game tactics and precision shooting</small>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-dumbbell fa-2x"></i><br>
+                <strong>Gym Coach</strong><br>
+                <small>Strength training and fitness guidance</small>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-music fa-2x"></i><br>
+                <strong>Music Recording</strong><br>
+                <small>Producing and capturing high-quality sound</small>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-guitar fa-2x"></i><br>
+                <strong>Guitar Recording</strong><br>
+                <small>Recording professional guitar tracks</small>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-tools fa-2x"></i><br>
+                <strong>Concert Technician</strong><br>
+                <small>Setting up and managing live performances</small>
             </div>
         </div>
+    </div>
     </section>
+
+
 
     <section id="contact" class="section bg-dark-blue">
-        <div>
-            <h2>Contact Information</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> Email: 67160012@kmitl.ac.th</p>
-                <p><i class="fas fa-phone"></i> Phone: 091-845-7513</p>
-            </div>
-            <div class="mt-4 text-center">
-                <a href="index.html" class="btn"><i class="fas fa-home"></i> Back to Home</a>
-            </div>
+    <div>
+        <h2>Contact Information</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> Email: 67160012@kmitl.ac.th</p>
+            <p><i class="fas fa-phone"></i> Phone: 091-845-7513</p>
         </div>
+        <div class="mt-4 text-center">
+            <a href="index.html" class="btn btn-light"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
+    </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <script>
-        $(document).ready(function() {
-            $(".navbar a").click(function(event) {
-                var target = $(this).attr("href"); 
-                if (target !== "#") {
-                    event.preventDefault();
-                    $('html, body').animate({
-                        scrollTop: $(target).offset().top
-                    }, 800);
-                }
-            });
-
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 50) {
-                    $(".navbar").addClass("navbar-shrink");
-                } else {
-                    $(".navbar").removeClass("navbar-shrink");
-                }
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
